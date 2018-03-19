@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_tree_res_partner_iut" model="ir.ui.view">
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree position="inside">
+                    <field name="employee_ref"/>
+                    <field name="room_id"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

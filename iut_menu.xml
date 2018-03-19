@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="Client" id="menu_model_root" groups="group_model_member" sequence="80" />
+        <menuitem name="Gestion de parc" id="menu_model_parc" sequence="90"/>
+        
+        <!-- Menu Modele / Configuration -->
+        <menuitem id="menu_modele_config" parent="menu_model_root"
+            name="Configuration" sequence="16"/>
+            
+        <menuitem id="menu_res_company_admin" parent="menu_modele_config"
+            action="base.action_res_company_form" sequence="10" name="Société"/>
+
+
+       <!-- Menu Gestion Parc -->
+        <menuitem id="menu_modele_parc_gestion" parent="menu_model_parc"
+                  name="Gestion Parc" sequence="16"/>
+
+        <menuitem id="menu_modele_brand" parent="menu_modele_parc_gestion"
+                  action="action_iut_brand" sequence="20" name="Brands"/>
+
+        <menuitem id="menu_modele_device" parent="menu_modele_parc_gestion"
+                  action="action_iut_device" sequence="30" name="Devices"/>
+
+        <menuitem id="menu_modele_model" parent="menu_modele_parc_gestion"
+                  action="action_iut_model" sequence="40" name="Models"/>
+
+        <menuitem id="menu_modele_model_type" parent="menu_modele_parc_gestion"
+                  action="action_iut_model_type" sequence="50" name="Model Types"/>
+
+        <menuitem id="menu_modele_office" parent="menu_modele_parc_gestion"
+                  action="action_iut_office" sequence="60" name="Offices"/>
+
+        <menuitem id="menu_modele_room" parent="menu_modele_parc_gestion"
+                  action="action_iut_room" sequence="70" name="Rooms"/>
+    </data>
+</openerp>

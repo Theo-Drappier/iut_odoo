@@ -10,8 +10,8 @@
         Long description of module's purpose
     """,
 
-    'author': "teamDSI",
-    'website': "http://www.team-dsi.fr",
+    'author': "Théo DRAPPIER",
+    'website': "http://www.theodrappier.fr",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/helico/module/module_data.xml
@@ -25,9 +25,15 @@
     # always loaded
     'data': [
         'security/tdsimodel_security.xml',
+        'views/brand_view.xml',
+        'views/device_view.xml',
+        'views/model_view.xml',
+        'views/model_type_view.xml',
+        'views/office_view.xml',
+        'views/room_view.xml',
+        'views/inherited_res_partner_view.xml',
         'datas/datas.xml',
-        'views/views.xml',
-        'tdsimodel_menu.xml',
+        'iut_menu.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_tree_iut_it_office">
+            <field name="name">iut.it.office.list</field>
+            <field name="model">iut.it.office</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_nb"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_iut_office" model="ir.actions.act_window">
+            <field name="name">Offices</field>
+            <field name="res_model">iut.it.office</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

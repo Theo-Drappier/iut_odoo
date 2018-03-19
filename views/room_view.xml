@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_tree_iut_it_model_type">
+            <field name="name">iut.it.room.list</field>
+            <field name="model">iut.it.room</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="floor"/>
+                    <field name="office_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_iut_room" model="ir.actions.act_window">
+            <field name="name">Rooms</field>
+            <field name="res_model">iut.it.room</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
