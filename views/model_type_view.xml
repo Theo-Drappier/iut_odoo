@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="view_form_iut_it_model_type">
+            <field name="name">iut.it.model.type.form</field>
+            <field name="model">iut.it.model.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="model_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="view_tree_iut_it_model_type">
             <field name="name">iut.it.model.type.list</field>
             <field name="model">iut.it.model.type</field>
@@ -12,11 +28,32 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_kanban_iut_it_model_type">
+            <field name="name">iut.it.model.type.kanban</field>
+            <field name="model">iut.it.model.type</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <h1>
+                                        <field name="name"/>
+                                    </h1>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <record id="action_iut_model_type" model="ir.actions.act_window">
             <field name="name">Model Types</field>
             <field name="res_model">iut.it.model.type</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">kanban,tree,form</field>
         </record>
     </data>
 </odoo>

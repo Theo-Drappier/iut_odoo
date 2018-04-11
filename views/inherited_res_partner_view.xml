@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!--<record model="ir.ui.view" id="view_form_iut_it_res_partner">
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="iut" string="IUT">
+                        <group>
+                            <field name="employee_ref"/>
+                            <field name="room_id"/>
+                            <field name="device_ids"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>-->
+
+        <record model="ir.ui.view" id="res_partner_form_view_iut">
+            <field name="name">res.partner.form.iut</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="priority" eval="99"/>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <field name="employee_ref"/>
+                    <field name="room_id"/>
+                </field>
+            </field>
+        </record>
+
         <record id="view_tree_res_partner_iut" model="ir.ui.view">
             <field name="inherit_id" ref="base.view_partner_tree"/>
             <field name="model">res.partner</field>
@@ -10,6 +39,13 @@
                     <field name="room_id"/>
                 </tree>
             </field>
+        </record>
+
+        <record id="action_iut_res_partner" model="ir.actions.act_window">
+            <field name="name">Partners</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
         </record>
     </data>
 </odoo>

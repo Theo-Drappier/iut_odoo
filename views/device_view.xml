@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record model="ir.ui.view" id="view_form_iut_it_device">
+            <field name="name">iut.it.device.form</field>
+            <field name="model">iut.it.device</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="serial_number"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="date_allocation"/>
+                                <field name="date_purchase"/>
+                            </group>
+                            <group>
+                                <field name="date_warranty_end"/>
+                                <field name="model_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="view_tree_iut_it_device">
             <field name="name">iut.it.device.list</field>
             <field name="model">iut.it.device</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree decoration-danger="current_date>date_warranty_end">
                     <field name="serial_number"/>
                     <field name="name"/>
                     <field name="date_allocation"/>

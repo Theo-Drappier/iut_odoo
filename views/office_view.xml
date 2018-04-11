@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record model="ir.ui.view" id="view_tree_iut_it_office">
-            <field name="name">iut.it.office.list</field>
+        <record model="ir.ui.view" id="view_form_iut_it_office">
+            <field name="name">iut.it.office.form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="model">iut.it.office</field>
-            <field name="type">tree</field>
+            <field name="mode">primary</field>
             <field name="arch" type="xml">
-                <tree>
+                <notebook position="inside">
+                    <page name="iut" string="IUT">
+                        <field name="room_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="floor"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_tree_iut_it_office">
+            <field name="name">iut.it.office.tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="model">iut.it.office</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree position="inside">
                     <field name="employee_nb"/>
                 </tree>
             </field>

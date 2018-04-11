@@ -34,5 +34,8 @@
 
         <menuitem id="menu_modele_room" parent="menu_modele_parc_gestion"
                   action="action_iut_room" sequence="70" name="Rooms"/>
+
+        <menuitem id="menu_modele_res_partner" parent="menu_modele_parc_gestion"
+                  action="action_iut_res_partner" sequence="80" name="Partners"/>
     </data>
 </openerp>

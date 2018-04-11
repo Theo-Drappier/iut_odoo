@@ -18,6 +18,17 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_search_iut_it_brand">
+            <field name="name">iut.it.brand.search</field>
+            <field name="model">iut.it.brand</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="view_tree_iut_it_brand">
             <field name="name">iut.it.brand.list</field>
             <field name="model">iut.it.brand</field>
