@@ -11,3 +11,7 @@ class ResPartner(models.Model):
     device_ids = fields.One2many(string='Devices', comodel_name='iut.it.device', inverse_name='res_partner_id')
     room_id = fields.Many2one(string='Room', comodel_name='iut.it.room')
 
+    @api.multi
+    def unlink_partner_devices(self):
+        self.ensure_one()
+        self.device_ids.unlink()

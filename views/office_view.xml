@@ -7,16 +7,21 @@
             <field name="model">iut.it.office</field>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
+                <header position="replace"/>
+                <field name="employee_ref" position="replace"/>
+                    <field name="room_id" position="replace"/>
+                <div name="button_box" position="inside">
+                    <button name="list_devices" type="object"
+                            class="oe_stat_button" icon="fa-mobile">
+                       <field name="device_nb" widget="statinfo" string="Devices"/>
+                    </button>
+                </div>
                 <notebook position="inside">
-                    <page name="iut" string="IUT">
-                        <field name="room_ids">
-                            <tree>
-                                <field name="name"/>
-                                <field name="floor"/>
-                            </tree>
-                        </field>
+                    <page name="room" string="Room">
+                        <field name="room_ids"/>
                     </page>
                 </notebook>
+                <page name="iut" position="replace"/>
             </field>
         </record>
 

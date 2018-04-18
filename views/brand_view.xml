@@ -7,6 +7,9 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="change_date_warranty" string="Modify warranty date" type="object"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>

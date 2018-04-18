@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from odoo import models, fields, api
 
@@ -18,3 +19,10 @@ class IutItBrand(models.Model):
             'Choose another value - it has to be unique !'
         )
     ]
+
+    @api.multi
+    def change_date_warranty(self):
+        self.ensure_one()
+        for model in self.model_ids:
+            for device in model.device_ids:
+                device.check_change()

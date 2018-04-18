@@ -1,1 +1,15 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_devices_all,Access rule devices all,model_iut_it_device,,1,0,0,0
+access_brands_all,Access rule brands all,model_iut_it_brand,,1,0,0,0
+access_models_all,Access rule models all,model_iut_it_model,,1,0,0,0
+access_model_types_all,Access rule model types all,model_iut_it_model_type,,1,0,0,0
+access_offices_all,Access rule offices all,model_iut_it_office,,1,0,0,0
+access_rooms_all,Access rule rooms all,model_iut_it_room,,1,0,0,0
+access_res_partners_all,Access rule partner all,model_res_partner,,1,0,0,0
+access_devices_admin,Access rule devices admin,model_iut_it_device,group_model_admin,1,1,1,1
+access_brands_admin,Access rule brand admin,model_iut_it_brand,group_model_admin,1,1,1,1
+access_models_admin,Access rule models admin,model_iut_it_model,group_model_admin,1,1,1,1
+access_model_types_admin,Access rule model types admin,model_iut_it_model_type,group_model_admin,1,1,1,1
+access_offices_admin,Access rule offices admin,model_iut_it_office,group_model_admin,1,1,1,1
+access_rooms_admin,Access rule rooms admin,model_iut_it_device,group_model_admin,1,1,1,1
+access_res_partner_admin,Access rule res partner admin,model_res_partner,group_model_admin,1,1,1,1

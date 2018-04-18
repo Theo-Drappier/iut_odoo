@@ -26,12 +26,12 @@
     'data': [
         'security/tdsimodel_security.xml',
         'views/brand_view.xml',
+        'views/inherited_res_partner_view.xml',
         'views/device_view.xml',
         'views/model_type_view.xml',
         'views/model_view.xml',
         'views/office_view.xml',
         'views/room_view.xml',
-        'views/inherited_res_partner_view.xml',
         'datas/datas.xml',
         'iut_menu.xml',
         'security/ir.model.access.csv',

@@ -8,7 +8,6 @@ class IutItDevice(models.Model):
     _name = 'iut.it.device'
 
     # region Fields Declaration
-
     name = fields.Char('Name', required=True)
     date_allocation = fields.Date('Allocation Date')
     serial_number = fields.Char('Serial Number', required=True)
@@ -18,6 +17,7 @@ class IutItDevice(models.Model):
     model_id = fields.Many2one(string='Model', comodel_name='iut.it.model')
     room_id = fields.Integer(related='res_partner_id.room_id.id', store=True, string="Room")
     office_id = fields.Integer(related='res_partner_id.room_id.office_id.id', store=True, string='Office')
+    is_free = fields.Boolean(string='Free', default=True)
 
     _sql_constraints = [
         (
@@ -32,3 +32,13 @@ class IutItDevice(models.Model):
     def check_change(self):
         self.date_warranty_end = (datetime.datetime.strptime(self.date_purchase, '%Y-%m-%d') +
                                   datetime.timedelta(self.model_id.brand_id.warrantly_delay_month * 365 / 12)).strftime('%Y-%m-%d')
+
+    @api.multi
+    def change_state(self):
+        self.ensure_one()
+        self.is_free = not self.is_free
+
+    @api.onchange('is_free')
+    def check_change_free(self):
+        if self.is_free:
+            self.date_allocation = None
