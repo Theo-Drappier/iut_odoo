@@ -35,6 +35,8 @@
         'datas/datas.xml',
         'iut_menu.xml',
         'security/ir.model.access.csv',
+        'wizard/wizard_assign_device_employee.xml',
+        'wizard/wizard_change_employee_device.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

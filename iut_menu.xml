@@ -37,5 +37,8 @@
 
         <menuitem id="menu_modele_res_partner" parent="menu_modele_parc_gestion"
                   action="action_iut_res_partner" sequence="80" name="Partners"/>
+
+        <menuitem id="menu_change_employee_device" parent="menu_modele_parc_gestion"
+                  action="action_wizard_change_employee" sequence="90" name="Change employee"/>
     </data>
 </openerp>

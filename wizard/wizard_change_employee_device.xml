@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_change_employee_device_form" model="ir.ui.view">
+            <field name="name">wizard.change.employee.form</field>
+            <field name="model">wizard.employee.device</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Change employee link">
+                    <group>
+                        <field name="res_partner_id_1"/>
+                    </group>
+                    <footer>
+                        <button name="next_step" type="object" class="oe_highlight" string="Next"/>
+                        <button special="cancel" class="oe_link" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_change_employee_device_confirm_form" model="ir.ui.view">
+            <field name="name">wizard.change.employee.confirm.form</field>
+            <field name="model">wizard.employee.device</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Change employee link">
+                    <group>
+                        <field name="res_partner_id_2"/>
+                    </group>
+                    <footer>
+                        <button name="change_employee" type="object" class="oe_highlight" string="Next"/>
+                        <button special="cancel" class="oe_link" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wizard_change_employee" model="ir.actions.act_window">
+            <field name="name">Change employee</field>
+            <field name="src_model">res.partner</field>
+            <field name="res_model">wizard.employee.device</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

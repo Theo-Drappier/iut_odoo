@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_assign_device_employee" model="ir.ui.view">
+            <field name="name">Assign device employee</field>
+            <field name="model">wizard.assign.device.employee</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Assign device employee">
+                    <group>
+                        <field name="res_partner_id"/>
+                    </group>
+                    <footer>
+                        <button class="oe_highlight" name="assign_employee" type="object" string="Confirm"/>
+                        <button class="oe_link" string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_assign_device_employee"
+                    name="Assign devices to employee"
+                    src_model="iut.it.device"
+                    res_model="wizard.assign.device.employee"
+                    view_type="form"
+                    view_mode="form"
+                    view_id="view_assign_device_employee"
+                    target="new"/>
+    </data>
+</odoo>
